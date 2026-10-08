@@ -78,6 +78,21 @@ skills/finetune-llm/
 docs/benchmark-2x-t4.md         # the evidence
 ```
 
+## More agent skills by me
+
+- [darpa-audit](https://github.com/instax-dutta/darpa-audit) - Heilmeier Catechism 8-question gate for brutal idea evaluation
+- [market-validator](https://github.com/instax-dutta/market-validator) - Validate SaaS ideas with real user complaints across 10+ platforms
+- [master-pitcher](https://github.com/instax-dutta/master-pitcher) - Audit, draft, or roast pitch decks with an 18-check VC framework
+- [brand-vibes](https://github.com/instax-dutta/brand-vibes) - Apply any company's design language while vibecoding, 66 brand profiles
+- [flash-compare](https://github.com/instax-dutta/flash-compare) - Flash-style top-1% product comparisons, exactly how flash.co works
+- [roadmap-tutor](https://github.com/instax-dutta/roadmap-tutor) - Learn any roadmap.sh roadmap one topic at a time, tracked across sessions
+- [scroll-3d-world](https://github.com/instax-dutta/scroll-3d-world) - Scroll-scrubbed 3D fly-through landing pages in Three.js, no AI video
+- [google-code-review](https://github.com/instax-dutta/google-code-review) - Google's code review best practices as an agent skill
+- [geo-seo-universal](https://github.com/instax-dutta/geo-seo-universal) - Universal GEO/SEO audit tool for agents
+- [dox-init](https://github.com/instax-dutta/dox-init) - Initialize the DOX AGENTS.md tree in one command
+- [gsd-skills](https://github.com/instax-dutta/gsd-skills) - 16 GSD workflow skills: plan, execute, ship, code-review, debug
+- [only-skills-you-need](https://github.com/instax-dutta/only-skills-you-need) - One install command for every coding AI tool, the curated daily stack
+
 ## License
 
 MIT
