@@ -1,0 +1,34 @@
+# Soup QLoRA SFT template. Fill from scripts/probe_hardware.py output.
+# swap the backend according to the probe: unsloth (VRAM-bound) | transformers | mlx
+base: NousResearch/Meta-Llama-3.1-8B-Instruct
+task: sft
+backend: unsloth
+
+data:
+  train: ./data/train.jsonl
+  format: auto                      # auto | alpaca | chatml | sharegpt | pre_tokenized
+  max_length: 1024                  # must match the probe's --seq
+  val_split: 0.0                    # val rows live in val.jsonl; score with scripts/eval_adapter.py
+  train_on_responses_only: false    # requires a {% generation %} chat template; verify in the log
+
+training:
+  epochs: 1                         # integer only; no max_steps in Soup
+  batch_size: 1                     # or auto + auto_batch_size_strategy
+  auto_batch_size_strategy: static
+  gradient_accumulation_steps: 8    # steps = rows / (batch x accum)
+  lr: 2.0e-4
+  scheduler: cosine
+  warmup_ratio: 0.03                # Soup converts to warmup_steps internally
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.0
+    target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  quantization: 4bit                # NF4; use none only when VRAM allows bf16 LoRA
+  optimizer: adamw_torch
+  gradient_checkpointing: false     # true when the probe says peak is close to VRAM
+  logging_steps: 1
+  save_steps: 100
+  data_seed: 3407
+
+output: ./out/runname

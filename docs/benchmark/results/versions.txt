@@ -1,0 +1,5 @@
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+torch 2.10.0+cu128
+transformers 5.17.0
+trl 0.29.1
+peft 0.21.2

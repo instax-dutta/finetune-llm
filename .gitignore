@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+out/
+logs/
+data/
+hardware.json

@@ -1,0 +1,11 @@
+accelerate                               1.13.0
+bitsandbytes                             0.50.2
+datasets                                 3.6.0
+peft                                     0.21.2
+soup-cli                                 0.75.0              /root/Soup
+torch                                    2.10.0+cu128
+transformers                             5.17.0
+trl                                      0.29.1
+unsloth                                  2026.9.14
+unsloth_zoo                              2026.9.9
+xformers                                 0.0.35

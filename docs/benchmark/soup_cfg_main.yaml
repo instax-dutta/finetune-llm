@@ -1,0 +1,33 @@
+base: NousResearch/Meta-Llama-3.1-8B-Instruct
+task: sft
+backend: transformers
+
+data:
+  train: ./data/alpaca.jsonl
+  format: alpaca
+  max_length: 1024
+  train_on_responses_only: false
+  val_split: 0.0
+
+training:
+  epochs: 1
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  auto_batch_size_strategy: static
+  lr: 2.0e-4
+  scheduler: cosine
+  warmup_ratio: 0.03
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.0
+    target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  quantization: 4bit
+  optimizer: adamw_torch
+  gradient_checkpointing: false
+  logging_steps: 1
+  save_steps: 1000
+  data_seed: 3407
+  rewind_log: false
+
+output: ./out/main_soup
